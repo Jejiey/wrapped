@@ -66,19 +66,6 @@ export default function Home({ params }: RouteParams) {
         <div className="space-y-8 w-full max-w-4xl px-4">
           <div className="bg-gradient-1 p-6 rounded-xl shadow-lg">
             <h2 className="text-2xl text-white font-semibold mb-4 font-nunito">
-              Your Most To Listened Song
-            </h2>
-            <p className="text-lg text-white font-nunito">
-              {`Your most listened to song was `}
-              <span className="font-bold">
-                {wrapped.topSongs.mostListened[0]}
-              </span>
-              {` with ${wrapped.topSongs.mostListened[1]} plays`}
-            </p>
-          </div>
-
-          <div className="bg-gradient-2 p-6 rounded-xl shadow-lg">
-            <h2 className="text-2xl text-white font-semibold mb-4 font-nunito">
               Your Most Played Song
             </h2>
             <p className="text-lg text-white font-nunito">
@@ -86,7 +73,20 @@ export default function Home({ params }: RouteParams) {
               <span className="font-bold">
                 {wrapped.topSongs.mostPlayed[0]}
               </span>
-              {` with ${(wrapped.topSongs.mostPlayed[1] / 60000 / 60).toFixed(
+              {` with ${wrapped.topSongs.mostPlayed[1]} plays`}
+            </p>
+          </div>
+
+          <div className="bg-gradient-2 p-6 rounded-xl shadow-lg">
+            <h2 className="text-2xl text-white font-semibold mb-4 font-nunito">
+              Your Most Listened To Song
+            </h2>
+            <p className="text-lg text-white font-nunito">
+              {`Your most listened to song was `}
+              <span className="font-bold">
+                {wrapped.topSongs.mostListened[0]}
+              </span>
+              {` with ${(wrapped.topSongs.mostListened[1] / 60000 / 60).toFixed(
                 1
               )} hours played`}
             </p>

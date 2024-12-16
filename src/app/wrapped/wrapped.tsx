@@ -221,11 +221,11 @@ export async function getWrapped(year: number): Promise<WrappedData> {
   for (const trackName in songStats) {
     const stats = songStats[trackName];
     totalSkips += stats.num_skips;
-    if (stats.num_listens > topSongs.mostListened[1]) {
-      topSongs.mostListened = [`${trackName}`, stats.num_listens];
+    if (stats.time_listens > topSongs.mostListened[1]) {
+      topSongs.mostListened = [`${trackName}`, stats.time_listens];
     }
-    if (stats.time_listens > topSongs.mostPlayed[1]) {
-      topSongs.mostPlayed = [`${trackName}`, stats.time_listens];
+    if (stats.num_listens > topSongs.mostPlayed[1]) {
+      topSongs.mostPlayed = [`${trackName}`, stats.num_listens];
     }
     if (stats.num_skips > topSongs.mostSkipped[1]) {
       topSongs.mostSkipped = [`${trackName}`, stats.num_skips, trackName];
