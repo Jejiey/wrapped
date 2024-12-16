@@ -3,8 +3,8 @@ It is a parody of spotify wrapped using the data you can download
 
 ## Getting Started
 
-Create an empty folder named 'data' 
-place your [Downloaded spotify data](https://support.stats.fm/docs/import/spotify-import/) in another folder named 'history'
+1. Create an empty folder named 'data' 
+2. Place your [downloaded spotify data](https://support.stats.fm/docs/import/spotify-import/) in another folder named 'history'
 
 To run the development server:
 
