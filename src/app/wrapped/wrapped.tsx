@@ -169,20 +169,30 @@ export async function getWrapped(year: number): Promise<WrappedData> {
       }
       devices[song.platform]++;
       msPlayed += song.ms_played;
-      if (!songStats[song.master_metadata_track_name]) {
-        songStats[song.master_metadata_track_name] = {
+      if (
+        !songStats[
+          `${song.master_metadata_track_name} by ${song.master_metadata_album_artist_name}`
+        ]
+      ) {
+        songStats[
+          `${song.master_metadata_track_name} by ${song.master_metadata_album_artist_name}`
+        ] = {
           artist_name: song.master_metadata_album_artist_name,
           num_listens: 0,
           num_skips: 0,
           time_listens: 0,
         };
       }
-      songStats[song.master_metadata_track_name].num_listens++;
-      songStats[song.master_metadata_track_name].num_skips += song.skipped
-        ? 1
-        : 0;
+      songStats[
+        `${song.master_metadata_track_name} by ${song.master_metadata_album_artist_name}`
+      ].num_listens++;
+      songStats[
+        `${song.master_metadata_track_name} by ${song.master_metadata_album_artist_name}`
+      ].num_skips += song.skipped ? 1 : 0;
 
-      songStats[song.master_metadata_track_name].time_listens += song.ms_played;
+      songStats[
+        `${song.master_metadata_track_name} by ${song.master_metadata_album_artist_name}`
+      ].time_listens += song.ms_played;
 
       const reasonStartIndex = Number(
         Object.keys(reasonStarting).indexOf(song.reason_start) -
@@ -212,23 +222,13 @@ export async function getWrapped(year: number): Promise<WrappedData> {
     const stats = songStats[trackName];
     totalSkips += stats.num_skips;
     if (stats.num_listens > topSongs.mostListened[1]) {
-      topSongs.mostListened = [
-        `${trackName} by ${stats.artist_name}`,
-        stats.num_listens,
-      ];
+      topSongs.mostListened = [`${trackName}`, stats.num_listens];
     }
     if (stats.time_listens > topSongs.mostPlayed[1]) {
-      topSongs.mostPlayed = [
-        `${trackName} by ${stats.artist_name}`,
-        stats.time_listens,
-      ];
+      topSongs.mostPlayed = [`${trackName}`, stats.time_listens];
     }
     if (stats.num_skips > topSongs.mostSkipped[1]) {
-      topSongs.mostSkipped = [
-        `${trackName} by ${stats.artist_name}`,
-        stats.num_skips,
-        trackName,
-      ];
+      topSongs.mostSkipped = [`${trackName}`, stats.num_skips, trackName];
     }
   }
   const skipped = songStats[topSongs.mostSkipped[2]];

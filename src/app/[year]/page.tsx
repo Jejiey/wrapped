@@ -159,14 +159,17 @@ export default function Home({ params }: RouteParams) {
               Top 10 Songs
             </h2>
             <ul className="text-lg text-white space-y-2 font-nunito">
-              {wrapped.sortedSongs.slice(0, 10).map((song, idx) => (
-                <li
-                  key={idx}
-                  className="hover:bg-white hover:text-gray-900 transition rounded-lg p-2"
-                >
-                  {song}
-                </li>
-              ))}
+              {wrapped.sortedSongs.slice(0, 10).map((song, idx) => {
+                const splitSongs = song.split(" by ");
+                return (
+                  <li
+                    key={idx}
+                    className="hover:bg-white hover:text-gray-900 transition rounded-lg p-2"
+                  >
+                    <b>{splitSongs[0]}</b> by {splitSongs[1]}
+                  </li>
+                );
+              })}
             </ul>
           </div>
 
