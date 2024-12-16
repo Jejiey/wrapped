@@ -193,23 +193,11 @@ export async function getWrapped(year: number): Promise<WrappedData> {
           Object.keys(reasonEnding).length / 2
       );
 
-      if (
-        reasonStartIndex !== -1 &&
-        reasonEndIndex >= 0 &&
-        reasonEndIndex < reasonTable[0].length
-      ) {
-        try {
-          reasonTable[reasonStartIndex][reasonEndIndex]++;
-        } catch {
-          console.error(`Error with song:`);
-          console.error(song);
-        }
-      } else {
-        console.error("Invalid song data or indices:", {
-          song,
-          reasonStartIndex,
-          reasonEndIndex,
-        });
+      try {
+        reasonTable[reasonStartIndex][reasonEndIndex]++;
+      } catch {
+        console.error(`Error with song:`);
+        console.error(song);
       }
     }
   });
@@ -270,7 +258,7 @@ export async function getWrapped(year: number): Promise<WrappedData> {
     });
 
     const probabilities = starting.map((ending) =>
-      Number((ending / totalStarting[i]).toFixed(2))
+      ending ? Number((ending / totalStarting[i]).toFixed(2)) : 0
     );
 
     totalStarting[i] = Number((totalStarting[i] / numSongs).toFixed(2));

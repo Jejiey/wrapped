@@ -18,6 +18,7 @@ export default {
         "gradient-6": "linear-gradient(43deg, #E7899C 0%, #F87541 100%)",
         "gradient-7": "linear-gradient(43deg, #AADB90 0%, #46AD2B 100%)",
         "gradient-8": "linear-gradient(43deg, #AD1485 0%, #ECAE11 100%)",
+        "gradient-9": "linear-gradient(43deg, #ECAE11 0%, #AD1485 100%)",
       },
     },
   },

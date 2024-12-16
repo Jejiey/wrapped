@@ -169,6 +169,15 @@ export default function Home({ params }: RouteParams) {
               ))}
             </ul>
           </div>
+
+          <div
+            className="bg-gradient-8 p-6 rounded-xl shadow-lg hover:bg-gradient-9 cursor-pointer"
+            onClick={() => (window.location.href = `/${year}/csv`)}
+          >
+            <h2 className="text-2xl text-white font-semibold mb-4 font-nunito">
+              How did you navigate between songs?
+            </h2>
+          </div>
         </div>
       </div>
     </main>
