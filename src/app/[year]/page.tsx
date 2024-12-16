@@ -88,7 +88,7 @@ export default function Home({ params }: RouteParams) {
               </span>
               {` with ${(wrapped.topSongs.mostListened[1] / 60000 / 60).toFixed(
                 1
-              )} hours played`}
+              )} hours runtime`}
             </p>
           </div>
 
@@ -106,7 +106,9 @@ export default function Home({ params }: RouteParams) {
                   wrapped.skipped.time_listens /
                   60000 /
                   60
-                ).toFixed(1)} hours and ${wrapped.skipped.num_listens} plays`}
+                ).toFixed(1)} hours runtime and ${
+                  wrapped.skipped.num_listens
+                } plays`}
               </p>
             ) : (
               <p className="text-lg text-white font-nunito">
