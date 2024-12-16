@@ -51,10 +51,10 @@ export default function Home({ params }: RouteParams) {
     return <div>Loading wrapped data...</div>;
   }
   return (
-    <main>
+    <main className="bg-gradient-0">
       <div
         onClick={() => (window.location.href = "/")}
-        className="absolute top-0 left-0 bg-blue-500 text-white text-sm px-4 py-2 rounded-br-lg cursor-pointer hover:bg-blue-600 transition"
+        className="absolute top-0 left-0 bg-gray-300 text-white text-sm px-4 py-2 rounded-br-lg cursor-pointer hover:bg-gray-600 transition"
       >
         Return
       </div>
@@ -64,9 +64,9 @@ export default function Home({ params }: RouteParams) {
 
       <div className="flex flex-col items-center">
         <div className="space-y-8 w-full max-w-4xl px-4">
-          <div className="bg-gradient-to-r from-blue-500 to-purple-500 p-6 rounded-xl shadow-lg">
+          <div className="bg-gradient-1 p-6 rounded-xl shadow-lg">
             <h2 className="text-2xl text-white font-semibold mb-4 font-nunito">
-              Your Most Listened Song
+              Your Most To Listened Song
             </h2>
             <p className="text-lg text-white font-nunito">
               {`Your most listened to song was `}
@@ -77,7 +77,7 @@ export default function Home({ params }: RouteParams) {
             </p>
           </div>
 
-          <div className="bg-gradient-to-r from-green-500 to-yellow-500 p-6 rounded-xl shadow-lg">
+          <div className="bg-gradient-2 p-6 rounded-xl shadow-lg">
             <h2 className="text-2xl text-white font-semibold mb-4 font-nunito">
               Your Most Played Song
             </h2>
@@ -92,7 +92,7 @@ export default function Home({ params }: RouteParams) {
             </p>
           </div>
 
-          <div className="bg-gradient-to-r from-red-500 to-pink-500 p-6 rounded-xl shadow-lg">
+          <div className="bg-gradient-3 p-6 rounded-xl shadow-lg">
             <h2 className="text-2xl text-white font-semibold mb-4 font-nunito">
               Your Most Skipped Song
             </h2>
@@ -115,7 +115,7 @@ export default function Home({ params }: RouteParams) {
             )}
           </div>
 
-          <div className="bg-gradient-to-r from-yellow-500 to-orange-500 p-6 rounded-xl shadow-lg">
+          <div className="bg-gradient-4 p-6 rounded-xl shadow-lg">
             <h2 className="text-2xl text-white font-semibold mb-4 font-nunito">
               Skip Percentage
             </h2>
@@ -127,7 +127,7 @@ export default function Home({ params }: RouteParams) {
             </p>
           </div>
 
-          <div className="bg-gradient-to-r from-teal-500 to-cyan-500 p-6 rounded-xl shadow-lg">
+          <div className="bg-gradient-5 p-6 rounded-xl shadow-lg">
             <h2 className="text-2xl text-white font-semibold mb-4 font-nunito">
               Offline Listening
             </h2>
@@ -138,7 +138,7 @@ export default function Home({ params }: RouteParams) {
             </p>
           </div>
 
-          <div className="bg-gradient-to-r from-purple-500 to-blue-500 p-6 rounded-xl shadow-lg">
+          <div className="bg-gradient-6 p-6 rounded-xl shadow-lg">
             <h2 className="text-2xl text-white font-semibold mb-4 font-nunito">
               Devices Used
             </h2>
@@ -154,7 +154,7 @@ export default function Home({ params }: RouteParams) {
             </ul>
           </div>
 
-          <div className="bg-gradient-to-r from-indigo-500 to-purple-600 p-6 rounded-xl shadow-lg">
+          <div className="bg-gradient-7 p-6 rounded-xl shadow-lg">
             <h2 className="text-2xl text-white font-semibold mb-4 font-nunito">
               Top 10 Songs
             </h2>

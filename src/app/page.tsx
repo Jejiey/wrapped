@@ -15,7 +15,7 @@ export default function Home() {
           {/* Year Buttons */}
           {Array.from({ length: 7 }, (_, i) => 2018 + i).map((year) => (
             <Link key={year} href={`/${year}`} passHref>
-              <div className="block bg-gradient-to-r from-yellow-400 via-red-500 to-pink-600 m-6 rounded-2xl shadow-lg text-2xl font-bold text-white text-center hover:bg-gradient-to-r hover:from-pink-600 hover:to-yellow-400 transition-all">
+              <div className="block bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 p-4 m-6 rounded-2xl shadow-lg text-2xl font-bold text-white text-center hover:bg-gradient-to-r hover:from-indigo-500 hover:via-purple-500 hover:to-pink-500 transition-all">
                 {year}
               </div>
             </Link>
